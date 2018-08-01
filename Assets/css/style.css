@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  color: white;
+  font-size: 5rem; }
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  font-size: 18px; }
+
+.background {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw; }
+
+.background .overlay {
+  background: rgba(0, 37, 71, 0.55);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 5fr 2fr;
+  align-items: center;
+  justify-items: center; }
+
+.background .overlay .wrapper {
+  width: 80%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.685);
+  border-radius: 30px;
+  background: #cae5ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(150deg, #cae5ff, #7ccfff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(150deg, #cae5ff, #7ccfff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.699);
+  opacity: .95; }
+
+#map {
+  height: 100vh;
+  width: 100vw; }
+
+/*# sourceMappingURL=style.css.map */

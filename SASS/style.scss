@@ -1,0 +1,93 @@
+// Main Color Variables //
+$main_color1: #00A8E8;
+$main_color2: #007EA7;
+$main_color3: #003459;
+$main_color4: rgb(0, 23, 31);
+$main_color5: #ECE5F0;
+$overlay_color: rgba(0, 37, 71, 0.55);
+$box_color: rgba(255, 255, 255, 0.685);
+
+// Mixins //
+
+// Gradients
+
+@mixin gradient($color1, $color2) {
+    background: $color1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(150deg, $color1, $color2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(150deg, $color1, $color2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+// Box Shadows
+
+@mixin shadow {
+    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.699);
+}
+
+// Box Styling
+@mixin box {
+    background-color: $box_color;
+    border-radius: 30px;
+    @include gradient(rgb(202, 229, 255), rgb(124, 207, 255));
+}
+
+//Background Images
+
+@mixin background($image) {
+    background: url($image) no-repeat center center fixed;
+    background-size: cover;
+}
+
+// Main Styling //
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+    font-size: 5rem;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: black;
+    font-size: 18px;
+}
+
+.background {
+    @include background('../img/background.jpg');
+    height: 100vh;
+    width: 100vw;
+}
+
+.background {
+    .overlay {
+        background: $overlay_color;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 5fr 2fr;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.background {
+    .overlay {
+        .wrapper {
+            width: 80%;
+            height: 60%;
+            @include box();
+            @include shadow();
+            opacity: .95;
+        }
+    }
+}
+
+
+#map {
+    height: 100vh;
+    width: 100vw;
+}
